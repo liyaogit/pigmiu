@@ -1,4 +1,4 @@
-package com.design.Decorator;
+package com.design.decorator;
 
 /**
  * Created by yli on 2017/5/4.

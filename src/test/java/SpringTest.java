@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class SpringTest {
     @Test
     public void testApplicationContext(){
-//        ApplicationContext ctx = new ClassPathXmlApplicationContext("resources/bean.xml");
+//        ApplicationContext ctx = new ClassPathXmlApplicationContext("/bean.xml");
 //        System.out.println(ctx);
     }
 }

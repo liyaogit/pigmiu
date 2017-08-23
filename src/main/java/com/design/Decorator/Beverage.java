@@ -1,4 +1,4 @@
-package com.design.Decorator;
+package com.design.decorator;
 
 /**装饰者模式
  * 应用场景: Java I/O

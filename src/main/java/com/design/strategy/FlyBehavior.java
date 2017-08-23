@@ -5,5 +5,5 @@ package com.design.strategy;
  * 行为类接口
  */
 public interface FlyBehavior {
-    public void fly();
+    void fly();
 }
