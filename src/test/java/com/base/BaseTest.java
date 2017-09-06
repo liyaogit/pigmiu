@@ -1,6 +1,5 @@
-package base;
+package com.base;
 
-import junit.framework.TestCase;
 import org.apache.commons.codec.binary.Base64;
 import org.junit.Test;
 

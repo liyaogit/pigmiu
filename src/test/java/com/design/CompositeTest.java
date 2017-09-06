@@ -1,4 +1,4 @@
-package design;
+package com.design;
 
 import com.design.composite.Menu;
 import com.design.composite.MenuComponent;

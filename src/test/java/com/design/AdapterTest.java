@@ -1,4 +1,4 @@
-package design;
+package com.design;
 
 import com.design.adapter.*;
 import org.junit.Test;

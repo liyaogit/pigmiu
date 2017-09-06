@@ -1,9 +1,8 @@
-package base;
+package com.base;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.pigmiu.dto.User;
-import org.junit.Assert;
+import com.pigmiu.dto.Animal;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -23,10 +22,10 @@ public class JsonTest {
         String n = JSON.toJSONString(null);
         System.out.println(n);
 
-        User user = JSONObject.parseObject("null", User.class);
+        Animal animal = JSONObject.parseObject("null", Animal.class);
 //        System.out.println(user.getName());
 
-        User uu = new User();
+        Animal uu = new Animal();
         uu.setName("heihie");
         String u = JSON.toJSONString(uu);
         JSONObject userJsonObject = JSON.parseObject(u);

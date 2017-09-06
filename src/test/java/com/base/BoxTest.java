@@ -1,4 +1,4 @@
-package base;
+package com.base;
 
 import org.junit.Test;
 
@@ -10,15 +10,9 @@ import org.junit.Test;
 public class BoxTest {
     Integer i;
     int j;
-    public static void main (String[] args){
-        BoxTest t = new BoxTest();
-        t.go();
-    }
-
-
     @Test
     public void formatTest(){
-        String s = String.format("%d",42.25);
+        String s = String.format("%d",42);
         System.out.println(s);
     }
 

@@ -1,4 +1,4 @@
-package design;
+package com.design;
 
 import com.design.proxy.dynamic.NonOwnerInvocationHandler;
 import com.design.proxy.dynamic.OwnerInvocationHandler;

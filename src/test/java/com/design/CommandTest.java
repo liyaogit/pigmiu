@@ -1,4 +1,4 @@
-package design;
+package com.design;
 
 import com.design.command.*;
 import org.junit.Test;

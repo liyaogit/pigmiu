@@ -1,4 +1,4 @@
-package design;
+package com.design;
 
 import com.design.observer.CurrentConditionsDisplay;
 import com.design.observer.WeatherData;
