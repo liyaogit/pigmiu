@@ -1,6 +1,6 @@
-package design;
+package com.design;
 
-import com.design.Decorator.*;
+import com.design.decorator.*;
 import org.junit.Test;
 
 /**

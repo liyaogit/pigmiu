@@ -1,4 +1,4 @@
-package design;
+package com.design;
 
 import com.design.strategy.Hulk;
 import com.design.strategy.IronMan;

@@ -1,4 +1,4 @@
-package com.design.Decorator;
+package com.design.decorator;
 
 /**
  * 调料-装饰抽象类

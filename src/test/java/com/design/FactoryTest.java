@@ -1,4 +1,4 @@
-package design;
+package com.design;
 
 import com.design.factory.ChicagoStylePizzaStore;
 import com.design.factory.NYStylePizzaStore;
