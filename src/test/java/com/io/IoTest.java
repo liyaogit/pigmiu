@@ -16,6 +16,8 @@ public class IoTest {
     @Test
     public void testObjectStream(){           //字节流测试
         try {
+            Dog dog = new Dog();
+            mmp(dog);
             FileOutputStream fs = new FileOutputStream(FILE_URL);
             ObjectOutputStream os = new ObjectOutputStream(fs);
             os.writeObject(new Dog("tom", 18));
@@ -39,6 +41,11 @@ public class IoTest {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    private String mmp(Dog dog){
+        dog.setAge(133);
+        return "1";
     }
 
     @Test

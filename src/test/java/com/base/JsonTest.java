@@ -27,6 +27,8 @@ public class JsonTest {
 
         Animal uu = new Animal();
         uu.setName("heihie");
+        uu.setAge(11);
+        uu.setFood(true);
         String u = JSON.toJSONString(uu);
         JSONObject userJsonObject = JSON.parseObject(u);
         JSONObject hdc =  userJsonObject.getJSONObject("hdc");
@@ -34,6 +36,12 @@ public class JsonTest {
         if (null!=hdc){
             System.out.println("mab"+hdc);
         }
+
+    }
+
+    @Test
+    public void testJsonToList(){
+        List<Map<String, String>> mapList = new ArrayList<Map<String, String>>();
 
     }
 
@@ -57,6 +65,7 @@ public class JsonTest {
         map.put("advancePay",advanceType);
 
         String n = JSON.toJSONString(map);
+
         System.out.println(n);
     }
 }
