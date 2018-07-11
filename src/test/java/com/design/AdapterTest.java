@@ -11,6 +11,7 @@ import java.util.List;
  * User: yli
  * Date: 2017/6/15
  * Time: 15:42
+ * 适配器模式
  */
 public class AdapterTest {
 

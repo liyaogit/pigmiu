@@ -5,6 +5,7 @@ import org.junit.Test;
 
 /**
  * Created by yli on 2017/5/10.
+ * 装饰着模式
  */
 public class DecoratorTest {
     @Test
