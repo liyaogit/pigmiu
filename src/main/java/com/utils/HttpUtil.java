@@ -55,6 +55,9 @@ public class HttpUtil {
         }
 
         HttpGet httpGet = new HttpGet(url);
+
+        httpGet.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:50.0) Gecko/20100101 Firefox/50.0"); // 设置请求头消息User-Agent
+
         CloseableHttpResponse response = httpclient.execute(httpGet);
         int statusCode = response.getStatusLine().getStatusCode();
         if(statusCode !=200){

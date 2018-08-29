@@ -27,6 +27,13 @@ public class DateTest {
     @Test
     public void calendarTest(){
         Calendar calendar = Calendar.getInstance();
+        System.out.println("Day of year:" + calendar.get(Calendar.DAY_OF_YEAR));
+
+        Calendar begin = calendar;
+
+        begin.add(Calendar.DAY_OF_YEAR, 1);
+        System.out.println("day of year:" + calendar.get(Calendar.DAY_OF_YEAR));
+
         //calendar.add(Calendar.DAY_OF_MONTH, -1);
         calendar.set(Calendar.HOUR_OF_DAY, 0);
         calendar.set(Calendar.MINUTE, 0);
@@ -44,6 +51,9 @@ public class DateTest {
         System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
         System.out.println(calendar.get(Calendar.MONTH));
         System.out.println(calendar.get(Calendar.DAY_OF_WEEK));
+
+
+
     }
 
     @Test
@@ -58,11 +68,12 @@ public class DateTest {
 
     @Test
     public void getDateRange(){
-        String date = "2018-02-27";
-        int number = 20;
+        String date = "06分20秒";
+        String[] d = date.split("分|秒");
 
+        int ll = Integer.valueOf(d[0]) * 60 + Integer.valueOf(d[1]);
 
-
+        System.out.println(ll);
 
     }
 }

@@ -34,7 +34,7 @@ public class ArrayTest {
     @Test
     public void ArrayToString(){
         List<String> list = new ArrayList<String>();
-        list.add("1");
+        list.addAll(null);
         list.add("2");
 
         //String setString = StringUtils.join(set.toArray(),";");
@@ -54,6 +54,7 @@ public class ArrayTest {
         likeList.add("2");
         likeList.add("8");
         likeList.add("9");
+        likeList.remove(0);
         for (String like : likeList){
             int i = (int)Math.random() * 9;
             System.out.println(likeList.get(i));
