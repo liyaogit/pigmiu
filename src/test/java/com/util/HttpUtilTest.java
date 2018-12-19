@@ -72,12 +72,12 @@ public class HttpUtilTest {
         params.put("signType","MD5");
         params.put("timestamp",String.valueOf(new Date().getTime()/1000));
         params.put("version","1.0");
-        params.put("signMsg",sign("A013F70DB97834C0A5492378BD76C53A",params));
+        params.put("signMsg",sign("key","A013F70DB97834C0A5492378BD76C53A",params));
         return params;
     }
 
-    private static String sign(String key,LinkedHashMap<String,Object> params){
-        String paramsStr=mapToQueryString(params)+"&key="+key;
+    private static String sign(String key, String value,LinkedHashMap<String,Object> params){
+        String paramsStr=mapToQueryString(params)+"&"+key+"="+value;
         return DecryptUtil.MD5(paramsStr);
     }
 
@@ -91,7 +91,7 @@ public class HttpUtilTest {
             String key = (String) entry.getKey();
             String value = (String) entry.getValue();
 
-            if (!StringUtils.isEmpty(value)) {
+            if (value!=null) {
                 sb.append(key).append("=").append(value).append("&");
             }
 
@@ -114,8 +114,8 @@ public class HttpUtilTest {
         Map<String, Object> params01 = new HashMap<String, Object>();
 
         Calendar calendar = Calendar.getInstance();
-        long timestamp = 1539856380045L;
-        calendar.add(Calendar.DAY_OF_YEAR, -1);
+        long timestamp = calendar.getTimeInMillis();
+        calendar.add(Calendar.DAY_OF_YEAR, -10);
         long lastFetch = calendar.getTimeInMillis();
 
         String token = DecryptUtil.MD5(id + key + timestamp);
@@ -123,7 +123,7 @@ public class HttpUtilTest {
         params01.put("id", id);
         params01.put("timestamp", timestamp);
         params01.put("token", token);
-        params01.put("page", 5);
+        params01.put("page", 1);
         params01.put("lastFetch", lastFetch);
         String result = HttpUtil.sendGet(testUrl01, params01);
 
@@ -141,6 +141,80 @@ public class HttpUtilTest {
 
         System.out.println(frame);
         System.out.println(new Date().getTime()-start.getTime());
+    }
+
+
+    @Test
+    public void testZaker() throws ParseException, IOException {
+        String testUrl01 = "http://iphone.myzaker.com/zaker/apps_telecom.php?for=zhangshangshenghuo";
+
+
+        String url = HttpUtil.sendGet(testUrl01, null);
+
+        Date start = new Date();
+        Document doc = Jsoup.parse(url);
+        Element content = doc.selectFirst("article");
+        //System.out.println(result);
+        System.out.println(content);
+        System.out.println(new Date().getTime()-start.getTime());
+
+        Element frame = content.selectFirst("iframe");
+
+
+        System.out.println(frame);
+        System.out.println(new Date().getTime()-start.getTime());
+    }
+
+    @Test
+    public void testYiLan() throws ParseException, IOException {
+        String testUrl01 = "https://openapi.yilan.tv/plat/getnewvideos";
+        String key ="yly0fjkt6qv2";
+        String token = "ptne3oga5hujjy36ohmo7dq725tyy71p";
+        LinkedHashMap<String, Object> params01 = new LinkedHashMap<String, Object>();
+
+        Calendar calendar = Calendar.getInstance();
+        long timestamp = calendar.getTimeInMillis();
+        calendar.add(Calendar.HOUR_OF_DAY, -24);
+        long lastFetch = calendar.getTimeInMillis();
+
+        params01.put("access_key", key);
+
+
+
+
+
+
+        //params01.put("begin_time", "1542531793");
+        params01.put("begin_time", String.valueOf(lastFetch/1000));
+        //params01.put("end_time", "1542618193");
+        params01.put("end_time", String.valueOf(timestamp/1000));
+
+        params01.put("format", "");
+
+        params01.put("ip", "");
+        params01.put("model", "");
+        params01.put("pg", "1");
+        params01.put("platform", "0");
+        params01.put("sid", "0");
+        //params01.put("timestamp","1542618193");
+        params01.put("timestamp",String.valueOf(new Date().getTime()/1000));
+
+        params01.put("udid", "");
+        params01.put("ver","1.0");
+        params01.put("sign",sign("access_token",token,params01));
+
+        String result = HttpUtil.sendGet(testUrl01, params01);
+
+        String content = HttpUtil.sendGet("https://howto.yilan.tv/video/play?id=pbjDv84ary2N", null);
+
+        String delete = HttpUtil.sendGet("https://openapi.yilan.tv/plat/getdelete", params01);
+
+
+        Date start = new Date();
+        //System.out.println(result);
+        System.out.println(content);
+        System.out.println(new Date().getTime()-start.getTime());
+
     }
 
 
