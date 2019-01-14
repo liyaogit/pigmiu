@@ -1,8 +1,6 @@
-package com.arithmetic;
+package com.algo;
 
 import org.junit.Test;
-
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @Auther: yli
@@ -10,7 +8,6 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @Description:
  */
 public class BinaryTest {
-    AtomicInteger atomicIntger = new AtomicInteger(0);
 
     @Test
     public void binaryDecimal(){
@@ -49,6 +46,46 @@ public class BinaryTest {
         System.out.println(String.format("%d与%d为%s", a, b, Binary.decimalToBinary(a & b)));
         System.out.println(String.format("%d或%d为%s",a, b, Binary.decimalToBinary(a | b)));
         System.out.println(String.format("%d异或%d为%s", a, b, Binary.decimalToBinary(a ^ b))); //相同为0
+    }
+
+
+    @Test
+    public void testCompareTime() {
+        //位操作应用，验证奇偶数
+        int even_cnt = 0, odd_cnt = 0;
+        long start, end;
+
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000000; i++) {
+
+            if((i & 1) == 0){
+                even_cnt ++;
+            }else{
+                odd_cnt ++;
+            }
+
+        }
+        end = System.currentTimeMillis();
+        System.out.println(end - start);
+        System.out.println(even_cnt + " " + odd_cnt);
+
+        even_cnt = 0;
+        odd_cnt = 0;
+
+        start = System.currentTimeMillis();
+        for (int i = 0; i < 100000000; i++) {
+
+            if((i % 2) == 0){
+                even_cnt ++;
+            }else{
+                odd_cnt ++;
+            }
+
+        }
+        end = System.currentTimeMillis();
+        System.out.println(end - start);
+        System.out.println(even_cnt + " " + odd_cnt);
+
     }
 
 }

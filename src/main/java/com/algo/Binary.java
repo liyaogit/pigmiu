@@ -1,11 +1,11 @@
-package com.arithmetic;
+package com.algo;
 
 import java.math.BigInteger;
 
 /**
  * @Auther: yli
  * @Date: 2018/12/18 11:47
- * @Description:二进制运算
+ * @Description:二进制运算,位运算
  */
 public class Binary {
 
