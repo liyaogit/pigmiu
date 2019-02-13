@@ -12,8 +12,13 @@ public class TrieTest {
     public void testTrieInit(){
         String[][] words = {{"no","没有"}, {"hero","英雄"}, {"in","在"}, {"her","她的"},{"sky","天空"}};
         Trie trie = new Trie();
-        TreeNode node = trie.init(words);
+        Trie.TreeNode node = trie.init(words);
+        System.out.println("树的深度优先遍历-----");
         trie.dfsByStack(node);
+        System.out.println("树的广度优先遍历-----");
+        trie.bfsByQueue(node);
+
+        System.out.println("树的深度优先搜索-----");
         trie.search(node, "hero");
         trie.search(node, "her");
         trie.search(node, "he");

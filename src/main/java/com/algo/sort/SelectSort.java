@@ -4,28 +4,23 @@ package com.algo.sort;
  * @Auther: yli
  * @Date: 2019/1/13 15:42
  * @Description:选择排序:
+ * 最好、最坏、平均时间复杂度都是O(n2)
+ * 空间复杂度O(1)
  * 缺点:不是稳定的排序算法
  */
 public class SelectSort {
     public void selectSort(int[] a, int n){
-        if (n < 1) return;
+        if (n <= 1) return;
         for (int i = 0; i < n - 1; i++){
-            int min = a[i];
-            boolean flag = false;
-            int index = i + 1;
+            int minIndex = i;
             for (int j = i + 1; j < n; j++){
-                if (a[j] < min){
-                    min = a[j];    //找出最小元素
-                    index = j;
-                    flag = true;
+                if (a[j] < a[minIndex]){
+                    minIndex = j;   //找出最小元素下标
                 }
             }
-            if (!flag){
-                break;
-            }
             int tep = a[i];
-            a[i] = a[index];
-            a[index] = tep;    //交换至已排序区间尾部
+            a[i] = a[minIndex];
+            a[minIndex] = tep;    //交换至已排序区间尾部
         }
     }
 
@@ -37,7 +32,7 @@ public class SelectSort {
 
     public static void main(String[] args){
         SelectSort sort = new SelectSort();
-        int[] a = {4,5,1,8,6,3,2,7};
+        int[] a = {1,5,4,8,6,3,2,7};
         sort.selectSort(a, 8);
         sort.printArray(a);
 

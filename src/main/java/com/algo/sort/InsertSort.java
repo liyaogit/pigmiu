@@ -1,5 +1,7 @@
 package com.algo.sort;
 
+import java.util.Arrays;
+
 /**
  * @Auther: yli
  * @Date: 2019/1/13 14:06
@@ -36,6 +38,7 @@ public class InsertSort {
     public static void main(String[] args){
         InsertSort sort = new InsertSort();
         int[] a = {3,1,2};
+        Arrays.sort(a);
         sort.insertSort(a, 3);
         sort.printArray(a);
 

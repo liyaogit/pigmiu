@@ -1,6 +1,7 @@
 package com.base;
 
 import org.apache.commons.codec.binary.Base64;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -43,6 +44,8 @@ public class BaseTest {
         String x = ha;
         ha = "jiji";
         System.out.println(x);
+        Integer s = 1;
+        Assert.assertTrue(s.equals(1));
     }
 
 

@@ -174,7 +174,7 @@ public class HttpUtilTest {
 
         Calendar calendar = Calendar.getInstance();
         long timestamp = calendar.getTimeInMillis();
-        calendar.add(Calendar.HOUR_OF_DAY, -24);
+        calendar.add(Calendar.DAY_OF_YEAR, -1);
         long lastFetch = calendar.getTimeInMillis();
 
         params01.put("access_key", key);
@@ -205,7 +205,7 @@ public class HttpUtilTest {
 
         String result = HttpUtil.sendGet(testUrl01, params01);
 
-        String content = HttpUtil.sendGet("https://howto.yilan.tv/video/play?id=pbjDv84ary2N", null);
+        String content = HttpUtil.sendGet("https://open-alpha.yilan.tv/plat/playcmb?id=qbjQLL4V1MAz", null);
 
         String delete = HttpUtil.sendGet("https://openapi.yilan.tv/plat/getdelete", params01);
 

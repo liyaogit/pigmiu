@@ -5,10 +5,13 @@ import java.util.Arrays;
 /**
  * @Auther: yli
  * @Date: 2018/12/29 15:56
- * @Description:排序算法
+ * @Description:归并排序
  * 时间复杂度分析:1、我们在分析一个算法、一段代码的时间复杂度的时候，也只关注执行次数最多的那一段就可以了
+ * 最好、最坏、平均时间复杂度均是O(n*logN)
+ * 空间复杂度O(n),不是原地排序算法
+ * 是一个稳定的排序算法
  */
-public class ResursionSort {
+public class MergeSort {
 
     /**
      * @param sort 原数组
