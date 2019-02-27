@@ -11,6 +11,7 @@ import java.util.Arrays;
  * User: yli
  * Date: 2017/7/11
  * Time: 15:32
+ * 模板模式
  */
 public class TemplateTest {
     @Test

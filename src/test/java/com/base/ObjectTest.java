@@ -20,4 +20,15 @@ public class ObjectTest {
 //        Integer a =  objects.get(0);
         System.out.println(objects);
     }
+
+    @Test
+    public void testFormat(){
+        String n = "1";
+        System.out.println(Integer.parseInt(n));
+
+        Integer l = 1;
+        String ll = l.toString();
+        System.out.println(ll);
+
+    }
 }

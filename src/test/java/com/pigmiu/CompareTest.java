@@ -34,7 +34,7 @@ public class CompareTest {
         System.out.println(animalList);
 
         Collections.sort(animalList,new AnimalAgeComparator());
-        Collections.sort(animalList);
+        //Collections.sort(animalList);
         System.out.println(animalList);
     }
 

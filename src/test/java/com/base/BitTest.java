@@ -21,7 +21,7 @@ public class BitTest {
 
         int i = -11;
         System.out.println(i + "   二进制:" + Integer.toBinaryString(i));
-        System.out.println("i左移两位(>> 右移运算符)" + Integer.toBinaryString(i>>2)); //左边补0,首位不变,正负号不变
+        System.out.println("i右移两位(>> 右移运算符)" + Integer.toBinaryString(i>>2)); //左边补0,首位不变,正负号不变
         System.out.println("i右移两位(>>> 无符号右移运算符)" + Integer.toBinaryString(i>>>2)); //左边全补0,正负号可能变化
         System.out.println("i左移两位(<< 左移运算符)" + Integer.toBinaryString(i<<2)); //右边全补0,正负号可能变化
     }

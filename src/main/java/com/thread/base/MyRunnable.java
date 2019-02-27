@@ -1,4 +1,4 @@
-package com.multithread;
+package com.thread.base;
 
 /**
  * User: yli
@@ -6,6 +6,7 @@ package com.multithread;
  * Time: 16:46
  * 1.丢失更新
  * 2.账户透支
+ * 非线程安全:是指多个线程对同一个对象中的同一个实例变量进行操作时会出现值被更改、不同步的情况。
  */
 public class MyRunnable implements Runnable{
     private int count;
@@ -17,9 +18,9 @@ public class MyRunnable implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            synchronized (this){  //加锁同步方法块
+            synchronized (this){  //加锁同步方法块，否则如果共享变量线程不安全
                 increment();
-                System.out.println(name + count);
+                System.out.println(name + "线程计算,count = " + count);
             }
 
         }
@@ -28,5 +29,9 @@ public class MyRunnable implements Runnable{
     private void increment(){
         int i = count;
         count = i + 1;
+    }
+
+    public static void main(String[] args){
+        System.out.println(Thread.currentThread().getName());
     }
 }

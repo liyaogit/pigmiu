@@ -8,6 +8,7 @@ import org.junit.Test;
 
 /**
  * Created by yli on 2017/4/28.
+ * 策略模式
  */
 public class StrategyTest {
     @Test

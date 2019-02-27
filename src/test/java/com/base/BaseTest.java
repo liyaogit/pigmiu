@@ -1,18 +1,21 @@
 package com.base;
 
 import org.apache.commons.codec.binary.Base64;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by yli on 2017/3/15.
  */
 public class BaseTest {
     @Test
+    //String不可传递
     public void testBase(){
         long i = 64;
         int j = (int)i;
@@ -41,6 +44,8 @@ public class BaseTest {
         String x = ha;
         ha = "jiji";
         System.out.println(x);
+        Integer s = 1;
+        Assert.assertTrue(s.equals(1));
     }
 
 
@@ -54,13 +59,18 @@ public class BaseTest {
         int j = 3;
         String[] list = new String[2];
         System.out.println(i==j);
+
+        String a = "a";
+        String b = "a";
+        System.out.println(a==b);
+
     }
 
     @Test
     public void testBase64(){
        String code = "MXFhekBXU1g=500";
-
-        System.out.println(new String(Base64.decodeBase64(code.substring(0,code.length()-3))));
+       String o = code.substring(0,code.length()-1);
+       System.out.println(new String(Base64.decodeBase64(code.substring(0,code.length()-3))));
     }
 
     private static String decodeBase64(String code){
@@ -93,6 +103,34 @@ public class BaseTest {
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Test
+    public void cal(){
+        Integer rate = 6;
+
+        Float fee = (float)  6 /(float)1000 * 1600;
+
+        System.out.print(fee);
+
+    }
+
+    @Test
+    public void uuid(){
+
+        System.out.print(UUID.randomUUID());
+
+    }
+
+    @Test
+    public void div(){
+        int total = 129;
+        Integer d = 8;
+
+        double rate =   (double) d /(double) total;
+        String result = String.format("%.1f", rate);
+        System.out.print(result);
+
     }
 }
 
