@@ -10,7 +10,7 @@
 
 * [MySQL](/src/notes/mysql/README.md)
 
-* 架构基础
+* [架构基础](/src/notes/architecture/README.md)
 
 * 网络
 
