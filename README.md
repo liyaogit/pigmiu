@@ -8,7 +8,7 @@
 
 * 多线程
 
-* MySQL
+* [MySQL](/notes/mysql/README.md)
 
 * 架构基础
 
