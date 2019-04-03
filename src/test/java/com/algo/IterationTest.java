@@ -16,6 +16,7 @@ public class IterationTest {
     @Test
     public void testRecursion(){
         long total = 128;
+
         recursion(total, new ArrayList<Long>());
     }
 
