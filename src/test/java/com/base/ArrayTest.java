@@ -1,7 +1,7 @@
 package com.base;
 
 import com.alibaba.fastjson.JSON;
-import org.apache.commons.lang.StringUtils;
+import com.sun.deploy.util.StringUtils;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -21,11 +21,11 @@ public class ArrayTest {
 
     @Test
     public void setToString(){
-        Set<Long> set = new HashSet<Long>();
-        set.add(1L);
-        set.add(2L);
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
 
-        String setString = StringUtils.join(set.toArray(),";");
+        String setString = StringUtils.join(set,";");
         String setJson = JSON.toJSONString(set.toArray());
         System.out.println(setString);
     }
@@ -34,9 +34,9 @@ public class ArrayTest {
     @Test
     public void ArrayToString(){
         List<String> list = new ArrayList<String>();
-        list.addAll(null);
+        list.add("1");
         list.add("2");
-
+        list = list.subList(0, 1);
         //String setString = StringUtils.join(set.toArray(),";");
         String json = JSON.toJSONString(list.toArray());
         System.out.println(json);

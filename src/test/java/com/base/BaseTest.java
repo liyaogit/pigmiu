@@ -128,8 +128,14 @@ public class BaseTest {
         Integer d = 8;
 
         double rate =   (double) d /(double) total;
-        String result = String.format("%.1f", rate);
-        System.out.print(result);
+        String result = String.format("%.1f", 12.6655);
+        System.out.println(result);
+
+        long a = 500;
+        long b = 10346;
+        double result1 = (double) b/(double) a;
+        String r = new DecimalFormat("0.0#%").format(((double) a/ (double)b));
+        System.out.println(r);//great
 
     }
 }

@@ -31,7 +31,9 @@ public class DateTest {
 
         Calendar begin = calendar;
 
-        begin.add(Calendar.DAY_OF_YEAR, 1);
+        begin.add(Calendar.DAY_OF_YEAR, 4);
+        System.out.println(calendar.get(Calendar.WEEK_OF_YEAR));
+        System.out.println(calendar.get(Calendar.DAY_OF_WEEK));
         System.out.println("day of year:" + calendar.get(Calendar.DAY_OF_YEAR));
 
         //calendar.add(Calendar.DAY_OF_MONTH, -1);

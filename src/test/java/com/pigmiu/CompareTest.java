@@ -1,12 +1,10 @@
 package com.pigmiu;
 
-import com.pigmiu.dto.Animal;
-import com.pigmiu.dto.Dog;
-import com.pigmiu.tool.collection.AnimalAgeComparator;
-import com.pigmiu.tool.collection.CollectionFactory;
+import com.pigmiu.variety.dto.Dog;
+import com.pigmiu.variety.collection.AnimalAgeComparator;
+import com.pigmiu.variety.collection.CollectionFactory;
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 

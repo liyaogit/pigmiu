@@ -1,8 +1,8 @@
 package com.pigmiu;
 
-import com.pigmiu.dto.Animal;
-import com.pigmiu.dto.Dog;
-import com.pigmiu.tool.collection.CollectionFactory;
+import com.pigmiu.variety.dto.Animal;
+import com.pigmiu.variety.dto.Dog;
+import com.pigmiu.variety.collection.CollectionFactory;
 import org.junit.Test;
 
 import java.util.ArrayList;

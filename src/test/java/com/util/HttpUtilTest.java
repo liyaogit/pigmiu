@@ -1,21 +1,16 @@
 package com.util;
 
-import com.alibaba.fastjson.JSON;
-import com.utils.DecryptUtil;
-import com.utils.HttpUtil;
-import org.apache.commons.lang.StringUtils;
+import com.pigmiu.utils.DecryptUtil;
+import com.pigmiu.utils.HttpUtil;
 import org.apache.http.ParseException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.junit.Test;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * @Auther: yli
